@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchWebApi", "TwitchWebApi\TwitchWebApi.csproj", "{29B42BA4-BF91-453B-849D-3C336B5DAFAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchWebApi.Test", "TwitchWebApi.Test\TwitchWebApi.Test.csproj", "{5913300C-C417-4C96-9C98-EF417816ED70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{897875BB-986C-4124-97B5-7AFA629B6F98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29B42BA4-BF91-453B-849D-3C336B5DAFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B42BA4-BF91-453B-849D-3C336B5DAFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B42BA4-BF91-453B-849D-3C336B5DAFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B42BA4-BF91-453B-849D-3C336B5DAFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5913300C-C417-4C96-9C98-EF417816ED70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5913300C-C417-4C96-9C98-EF417816ED70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5913300C-C417-4C96-9C98-EF417816ED70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5913300C-C417-4C96-9C98-EF417816ED70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897875BB-986C-4124-97B5-7AFA629B6F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897875BB-986C-4124-97B5-7AFA629B6F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897875BB-986C-4124-97B5-7AFA629B6F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897875BB-986C-4124-97B5-7AFA629B6F98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
