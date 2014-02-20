@@ -128,7 +128,4 @@ namespace TwitchWebApi
         public Links Links { get; set; }
     }
 
-
-
-
 }

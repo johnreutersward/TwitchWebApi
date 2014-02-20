@@ -46,6 +46,14 @@ namespace TwitchWebApi.Test
         }
 
         [TestMethod]
+        public void TestTeamError()
+        {
+            var team = twitch.Team("TeamTwitchWebApiClientTeamTest");
+            Assert.IsNotNull(team);
+            Assert.AreEqual(team.Status, 404);
+        }
+
+        [TestMethod]
         public void TestTeams()
         {
             var team = twitch.Teams(1, 0);
@@ -67,6 +75,13 @@ namespace TwitchWebApi.Test
             var video = twitch.Video("a328087483");
             Assert.IsNotNull(video);
             Assert.AreEqual(video.Id, "a328087483");
+        }
+
+        [TestMethod]
+        public void TestVideosTop()
+        {
+            var videosTop = twitch.VideosTop();
+            Assert.IsNotNull(videosTop);
         }
     }
 }

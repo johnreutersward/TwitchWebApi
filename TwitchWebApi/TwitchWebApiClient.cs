@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using RestSharp;
-using RestSharp.Deserializers;
 
 
 namespace TwitchWebApi
@@ -26,12 +25,13 @@ namespace TwitchWebApi
     }
     public class TwitchWebApiClient : ITwitchWebApiClient
     {
-        private const string BaseUrl = "https://api.twitch.tv/kraken";
-        private string ClientId;
+        const string BaseUrl = "https://api.twitch.tv/kraken";
+        
+        readonly string _clientId;
 
-        public TwitchWebApiClient(string ClientId) 
+        public TwitchWebApiClient(string clientId) 
         {
-            this.ClientId = ClientId;          
+            _clientId = clientId;      
         }
 
         public GamesTopResponse GamesTop(int limit = 25, int offset = 0, bool hls = false)
@@ -113,9 +113,8 @@ namespace TwitchWebApi
             var client = new RestClient();
             client.BaseUrl = BaseUrl;
             request.AddHeader("Accept", "application/vnd.twitchtv.v2+json");
-            request.AddHeader("Client-ID", ClientId);
-            var response = client.Execute(request);
-            var jsonDeserializer = new JsonDeserializer();
+            request.AddHeader("Client-ID", _clientId);
+            var response = client.Execute<T>(request);
 
             if (response.ErrorException != null)
             {
@@ -124,16 +123,7 @@ namespace TwitchWebApi
                 throw twitchWebApiException;
             }
 
-            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-            {
-                var error = jsonDeserializer.Deserialize<ErrorResponse>(response);
-                var twitchWebApiException = new ApplicationException(error.Message, response.ErrorException);
-                throw twitchWebApiException;
-            }
-            else
-            {
-                return jsonDeserializer.Deserialize<T>(response);
-            }
+            return response.Data;
         }
 
     }
