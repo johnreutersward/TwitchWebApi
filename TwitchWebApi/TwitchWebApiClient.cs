@@ -86,6 +86,24 @@ namespace TwitchWebApi
             return Execute<UserResponse>(request);
         }
 
+        public StreamResponse Stream(string streamName)
+        {
+            var request = new RestRequest();
+            request.Resource = "/streams/{stream}";
+            request.AddUrlSegment("stream", streamName);
+            return Execute<StreamResponse>(request);
+        }
+
+        public FeaturedStreamResponse FeaturedStreams(int limit = 25, int offset = 0, bool hls = false)
+        {
+            var request = new RestRequest();
+            request.Resource = "/streams/featured";
+            request.AddParameter("limit", limit.ToString(), ParameterType.GetOrPost);
+            request.AddParameter("offset", offset.ToString(), ParameterType.GetOrPost);
+            request.AddParameter("hls", hls.ToString(), ParameterType.GetOrPost);
+            return Execute<FeaturedStreamResponse>(request);
+        }
+
         public VideoResponse Video(string id)
         {
             var request = new RestRequest();

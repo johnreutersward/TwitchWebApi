@@ -11,7 +11,7 @@ namespace TwitchWebApi.Test
         [TestInitialize]
         public void Startup()
         {
-            twitch = new TwitchWebApiClient("ADD_CLIENT-ID_HERE");
+            twitch = new TwitchWebApiClient("API KEY GOES HERE");
         }
 
         [TestMethod]
@@ -43,6 +43,20 @@ namespace TwitchWebApi.Test
         {
             var team = twitch.Team("eg");
             Assert.IsNotNull(team);
+        }
+
+        [TestMethod]
+        public void TestStream()
+        {
+            var stream = twitch.Stream("twitchplayspokemon");
+            Assert.IsNotNull(stream);
+        }
+
+        [TestMethod]
+        public void TestFeaturedStreams()
+        {
+            var stream = twitch.FeaturedStreams();
+            Assert.IsNotNull(stream);
         }
 
         [TestMethod]
