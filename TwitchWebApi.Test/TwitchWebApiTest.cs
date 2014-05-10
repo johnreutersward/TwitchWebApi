@@ -57,6 +57,8 @@ namespace TwitchWebApi.Test
         {
             var stream = twitch.FeaturedStreams();
             Assert.IsNotNull(stream);
+            Assert.IsNotNull(stream.featured);
+            Assert.IsNotNull(stream.featured[0].stream);
         }
 
         [TestMethod]

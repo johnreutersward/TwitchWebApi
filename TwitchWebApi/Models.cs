@@ -181,6 +181,6 @@ namespace TwitchWebApi
     {
         public string image { get; set; }
         public string text { get; set; }
-        public Stream stream { get; set; }
+        public StreamBody stream { get; set; }
     }
 }
