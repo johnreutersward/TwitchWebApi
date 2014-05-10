@@ -107,14 +107,39 @@ namespace TwitchWebApi
         public string Preview { get; set; }
 
         public Channel Channel { get; set; }
-
-
     }
 
     public class Channel
     {
         public string Name { get; set; }
         public string DisplayName { get; set; }
+        public ChannelLinks _links { get; set; }
+        public List<Team> teams { get; set; }
+        public string status { get; set; }
+        public string created_at { get; set; }
+        public string logo { get; set; }
+        public string updated_at { get; set; }
+        public bool mature { get; set; }
+        public string video_banner { get; set; }
+        public int _id { get; set; }
+        public string background { get; set; }
+        public string banner { get; set; }
+        public string name { get; set; }
+        public string url { get; set; }
+        public string game { get; set; }
+    }
+
+    public class ChannelLinks
+    {
+        public string stream_key { get; set; }
+        public string editors { get; set; }
+        public string subscriptions { get; set; }
+        public string commercial { get; set; }
+        public string videos { get; set; }
+        public string follows { get; set; }
+        public string self { get; set; }
+        public string chat { get; set; }
+        public string features { get; set; }
     }
 
     public class User
@@ -128,4 +153,34 @@ namespace TwitchWebApi
         public Links Links { get; set; }
     }
 
+    public class Stream
+    {
+        public Links _links { get; set; }
+        public StreamBody stream { get; set; }
+    }
+
+    public class StreamBody
+    {
+        public Links _links { get; set; }
+        public string broadcaster { get; set; }
+        public string preview { get; set; }
+        public string _id { get; set; }
+        public int viewers { get; set; }
+        public Channel channel { get; set; }
+        public string name { get; set; }
+        public string game { get; set; }
+    }
+
+    public class FeaturedStream
+    {
+        public Links _links { get; set; }
+        public List<Featured> featured { get; set; }
+    }
+
+    public class Featured 
+    {
+        public string image { get; set; }
+        public string text { get; set; }
+        public Stream stream { get; set; }
+    }
 }

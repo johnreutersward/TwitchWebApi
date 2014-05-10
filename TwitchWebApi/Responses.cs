@@ -52,7 +52,22 @@ namespace TwitchWebApi
         public string Message { get; set; }
     }
 
+
     public class UserResponse : User, ErrorResponse  {
+        public string Error { get; set; }
+        public int Status { get; set; }
+        public string Message { get; set; }
+    }
+
+    public class StreamResponse : Stream, ErrorResponse
+    {
+        public string Error { get; set; }
+        public int Status { get; set; }
+        public string Message { get; set; }
+    }
+
+    public class FeaturedStreamResponse : FeaturedStream, ErrorResponse
+    {
         public string Error { get; set; }
         public int Status { get; set; }
         public string Message { get; set; }
